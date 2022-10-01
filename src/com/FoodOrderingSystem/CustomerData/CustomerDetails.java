@@ -11,7 +11,15 @@ public class CustomerDetails {
     private int age;
     private List<OrderingRequest> orderingRequests = new ArrayList<>();
     private NotificationSystem notificationSystem;
+    private Payment payment;
 
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
 
     public int getTableNo() {
         return tableNo;

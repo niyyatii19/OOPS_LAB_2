@@ -1,2 +1,4 @@
-package com.FoodOrderingSystem.CustomerData;public class CashPayment {
+package com.FoodOrderingSystem.CustomerData;
+
+public class CashPayment extends Payment{
 }

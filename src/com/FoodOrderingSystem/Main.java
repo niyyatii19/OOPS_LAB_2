@@ -38,6 +38,21 @@ public class Main {
         notificationSystem.takeTheOrderList();
         System.out.println("Your Bill: ");
         System.out.println(orderingSystem.orderSummary());
+        System.out.println("Enter your Payment Mode: Debit, Credit, Cash");
+        String payment = scan.next();
+        Payment payment1;
+        if(payment.equals("Debit")){
+            payment1 = new DebitCard();
+        }
+        else if(payment.equals("Credit")){
+            payment1 = new CreditCard();
+        }else{
+            payment1 = new CashPayment();
+        }
+        payment1.setMakePayment(true);
+        customerDetails.setPayment(payment1);
+
+        System.out.println("Thanks for visiting");
     }
 
     public static void takeOrder(int options){
