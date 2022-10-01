@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Main {
     static Scanner scan = new Scanner(System.in);
     static CustomerDetails customerDetails = new CustomerDetails("XYZ", 18);
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 	// write your code here
         Menu menu = new Menu();
         menu.getMenu();
@@ -24,7 +24,7 @@ public class Main {
                     "Any other number to quit");
             option = scan.nextInt();
             takeOrder(option);
-        }while(option != 3);
+        }while(option < 3);
 
         NotificationSystem notificationSystem = new NotificationSystem();
         OrderingSystem orderingSystem = new OrderingSystem();
@@ -36,6 +36,7 @@ public class Main {
         notificationSystem.setKitchen(kitchen);
 
         notificationSystem.takeTheOrderList();
+        System.out.println("***********************");
         System.out.println("Your Bill: ");
         System.out.println(orderingSystem.orderSummary());
         System.out.println("Enter your Payment Mode: Debit, Credit, Cash");
@@ -52,7 +53,7 @@ public class Main {
         payment1.setMakePayment(true);
         customerDetails.setPayment(payment1);
 
-        System.out.println("Thanks for visiting");
+        System.out.println("Thanks for visiting! Payment Successful");
     }
 
     public static void takeOrder(int options){
